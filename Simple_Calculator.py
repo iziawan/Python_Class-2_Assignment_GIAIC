@@ -16,18 +16,32 @@ def divide(x, y):
         return "Error! Division by zero."
     return x / y
 
+def floor_divide(x, y):
+    # Function to perform floor division, checking for division by zero
+    if y == 0:
+        return "Error! Division by zero."
+    return x // y  
+
+def modulus(x, y):
+    # Function to find the modulus (remainder), checking for division by zero
+    if y == 0:
+        return "Error! Division by zero."
+    return x % y 
+
 # Display the available operations
 print("Select operation:")
 print("1. Addition")
 print("2. Subtraction")
 print("3. Multiplication")
 print("4. Division")
+print("5. Floor Division")
+print("6. Modulus")
 
-# User choose an operation
-choice = input("Enter choice (1/2/3/4): ")
+# Get user choice of operation
+choice = input("Enter choice (1/2/3/4/5/6): ")
 
 # Check if the choice is valid
-if choice in ('1', '2', '3', '4'):
+if choice in ('1', '2', '3', '4', '5', '6'):
     # Get user input for numbers
     num1 = float(input("Enter first number: "))
     num2 = float(input("Enter second number: "))
@@ -41,7 +55,11 @@ if choice in ('1', '2', '3', '4'):
         print(f"Result: {multiply(num1, num2)}")
     elif choice == '4':
         print(f"Result: {divide(num1, num2)}")
+    elif choice == '5':
+        print(f"Result: {floor_divide(num1, num2)}")
+    elif choice == '6':
+        print(f"Result: {modulus(num1, num2)}")
 else:
     # Handle invalid input
-    print("Invalid input! Please enter a valid choice.") 
+    print("Invalid input! Please enter a valid choice.")
 
